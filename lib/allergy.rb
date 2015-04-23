@@ -2,7 +2,7 @@ class String
   define_method(:allergy) do
     allergy_score = self.to_i()
     allergies = []
-    message= ""
+    message= "You are allergic to:  "
     if allergy_score > 255
       message = "Don't eat or breath, you have issues that include: cats, pollen, chocolate, tomatoes, strawberries, shellfish, peanuts, eggs"
     else
@@ -38,7 +38,7 @@ class String
        allergy_score = allergy_score.-(1)
        allergies = allergies.push("eggs")
      end
-     message = allergies.join(", ")
+     message += allergies.join(", ")
    end
    message
   end
